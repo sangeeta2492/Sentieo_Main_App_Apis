@@ -1,15 +1,14 @@
 {
   "name": "postman_newman_jenkins",
   "version": "1.0.0",
-  "description": "postman tests",
+  "description": "Sentieo Mobile API test",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "api_tests_production": "newman run tests/Sentieo_Main_App_Apis.postman_20MAY.json -e tests/Sentieo_Main_App.postman_environment.json"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Sangeeta Nandal",
   "dependencies": {
     "newman": "^4.4.1"
   }
