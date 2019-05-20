@@ -2,12 +2,11 @@
   "name": "postman_newman_jenkins",
   "version": "1.0.0",
   "description": "postman tests",
-  "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api_tests_production": "newman run tests/Sentieo_Main_App_Apis.postman_20MAY.json -e tests/Sentieo_Main_App.postman_environment.json"
   },
   "author": "",
   "license": "ISC",
