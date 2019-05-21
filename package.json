@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "api_tests_production": "newman run tests/Sentieo_Main_App_Apis.postman_collection_21MAY.json -e tests/Sentieo_Main_App.postman_environment.json"
+    "api_tests_production": "newman run tests/Sentieo_Main_App_Apis_21MAY.json -e tests/Sentieo_Main_App.postman_environment.json"
   },
   "author": "Sangeeta Nandal",
   "dependencies": {
