@@ -1,0 +1,30 @@
+{
+  "name": "postman-jenkins",
+  "version": "1.0.0",
+  "description": "Project for storing postman tests",
+  "directories": {
+   "test":"tests1"
+   },
+  "scripts": {
+    "api_tests": "newman run tests1/iPad_app_API.postman_collection1.json -e tests1/iPad_app_envi.postman_environment1.json"
+  },
+  "author": "Malika",
+  "dependencies": {
+    "newman": "^4.5.0"
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
