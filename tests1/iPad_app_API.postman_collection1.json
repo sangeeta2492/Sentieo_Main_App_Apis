@@ -17669,7 +17669,6 @@
 							"                    \"examples\": [",
 							"                      \"Elon Musk and Tesla have finally decided to raise money, but shareholders shouldn't expect more than a temporary reprieve.\"",
 							"                    ],",
-							"                    \"pattern\": \"^(.*)$\"",
 							"                  },",
 							"                  \"source\": {",
 							"                    \"$id\": \"#/properties/result/properties/article/properties/result/items/properties/source\",",
@@ -23555,16 +23554,18 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "d5571822-d273-462d-9eee-5ebeeaadfe9d",
+						"id": "e780df20-57ad-4bd9-94e5-03957ad2bc4d",
 						"exec": [
-							"//postman.setGlobalVariable('timestampUtcIso8601', (new Date()).toISOString());",
+							"var moment = require(\"moment\");",
 							"",
+							"//pm.environment.set('current_timestamp',moment(Date.now()).valueOf());",
 							"",
-							"//pm.environment.set('current_timestamp',{{$timestamp}});",
-							"var moment = require(\"moment\")",
+							"var yesterday_timestamp = moment(Date.now()).subtract(24, 'hours').valueOf();",
+							"console.log(yesterday_timestamp);",
 							"",
-							"//console.log(moment(new Date()).valueOf())",
-							"pm.environment.set('current_timestamp',moment(Date.now()).valueOf())"
+							"//pm.environment.set('yester_timestamp', yesterday_timestamp);",
+							"",
+							"pm.variables.set('yester_timestamp', moment(Date.now()).subtract(24, 'hours').valueOf());"
 						],
 						"type": "text/javascript"
 					}
@@ -23572,7 +23573,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7799726c-279f-4311-b5b3-d6a959c1709f",
+						"id": "da0a0755-bcd2-472b-ad07-e38e38b47baf",
 						"exec": [
 							"//Test 1",
 							"pm.test(\"Status code is 200\", function () {",
@@ -23754,7 +23755,6 @@
 							"                \"examples\": [",
 							"                  \"<div>I am going wondering if you could get me some work done in&nbsp;</div>\"",
 							"                ],",
-							"                \"pattern\": \"^(.*)$\"",
 							"              },",
 							"              \"version\": {",
 							"                \"$id\": \"#/properties/result/properties/deleted/items/properties/version\",",
@@ -23968,7 +23968,7 @@
 							"              },",
 							"              \"parent_note_id\": {",
 							"                \"$id\": \"#/properties/result/properties/updated/items/properties/parent_note_id\",",
-							"                \"type\": \"null\",",
+							"                \"type\": [\"null\",\"string\"],",
 							"                \"title\": \"The Parent_note_id Schema\",",
 							"                \"default\": null,",
 							"                \"examples\": [",
@@ -23983,7 +23983,7 @@
 							"                \"examples\": [",
 							"                  \"<div>I am going wondering if you could get me some work done in&nbsp;</div>\\n\\n<div>&nbsp;</div>\\n\\n<div>t6yhtgtg6uj7gvfvgbynynun6tvrvtbyggyhyhyhyhyh</div>\"",
 							"                ],",
-							"                \"pattern\": \"^(.*)$\"",
+							"                ",
 							"              },",
 							"              \"version\": {",
 							"                \"$id\": \"#/properties/result/properties/updated/items/properties/version\",",
@@ -24067,7 +24067,7 @@
 							"              },",
 							"              \"locked_by\": {",
 							"                \"$id\": \"#/properties/result/properties/updated/items/properties/locked_by\",",
-							"                \"type\": \"string\",",
+							"                \"type\": [\"string\",\"null\"],",
 							"                \"title\": \"The Locked_by Schema\",",
 							"                \"default\": \"\",",
 							"                \"examples\": [",
@@ -24239,7 +24239,6 @@
 							"                \"examples\": [",
 							"                  \"<div>Hello&nbsp;</div>\"",
 							"                ],",
-							"                \"pattern\": \"^(.*)$\"",
 							"              },",
 							"              \"version\": {",
 							"                \"$id\": \"#/properties/result/properties/created/items/properties/version\",",
@@ -24323,7 +24322,7 @@
 							"              },",
 							"              \"locked_by\": {",
 							"                \"$id\": \"#/properties/result/properties/created/items/properties/locked_by\",",
-							"                \"type\": \"string\",",
+							"                \"type\": [\"string\",\"null\"],",
 							"                \"title\": \"The Locked_by Schema\",",
 							"                \"default\": \"\",",
 							"                \"examples\": [",
@@ -24385,18 +24384,7 @@
 			],
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "multipart/form-data",
-						"type": "text"
-					},
-					{
-						"key": "Cookie",
-						"value": "{{cookie}}",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
@@ -24412,13 +24400,13 @@
 						},
 						{
 							"key": "ts",
-							"value": "{{current_timestamp}}",
+							"value": "{{yester_timestamp}}",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "https://{{user_app_url}}/api/get_notebook_updates/?ts={{current_timestamp}}",
+					"raw": "https://{{user_app_url}}/api/get_notebook_updates/?ts={{yester_timestamp}}",
 					"protocol": "https",
 					"host": [
 						"{{user_app_url}}"
@@ -24431,7 +24419,7 @@
 					"query": [
 						{
 							"key": "ts",
-							"value": "{{current_timestamp}}"
+							"value": "{{yester_timestamp}}"
 						}
 					]
 				}
@@ -36181,11 +36169,11 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "201a81c5-2e09-4ca4-a394-5df349c8d6ed",
+						"id": "e57c95f2-8a12-44c1-b828-a319da1c06f9",
 						"exec": [
 							"",
 							"",
-							"pm.variables.set('thesis_note_section_action', 'update_note_section')",
+							"//pm.variables.set('thesis_note_section_action', 'update_note_section')",
 							""
 						],
 						"type": "text/javascript"
@@ -36194,7 +36182,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "31fa3f11-4d5c-4580-a45a-ccfcfdf2babb",
+						"id": "86c6ea90-b43e-45b6-b007-ccf55652bfb0",
 						"exec": [
 							"//Test 1",
 							"pm.test(\"Status code is 200\", function () {",
@@ -36364,7 +36352,7 @@
 						},
 						{
 							"key": "action",
-							"value": "update_note_section",
+							"value": "{{thesis_note_section_action}}",
 							"type": "text"
 						},
 						{
