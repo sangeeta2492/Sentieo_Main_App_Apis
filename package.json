@@ -6,7 +6,7 @@
    "test":"tests1"
    },
   "scripts": {
-    "api_tests": "newman run tests1/iPad_app_API.postman_collection1.json -e tests1/iPad_app_envi.postman_environment1.json"
+    "api_tests": "newman run tests1/iPad_app_API.postman_collection1.json -e tests1/iPad_app_envi.postman_environment1.json -r cli,junit"
   },
   "author": "Malika",
   "dependencies": {
