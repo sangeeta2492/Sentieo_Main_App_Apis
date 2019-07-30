@@ -42,10 +42,6 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{app_url}}/api/check_domain/?email={{email}}",
 					"protocol": "https",
@@ -163,10 +159,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{app_url}}/api/set_csrf_cookie/?",
 					"protocol": "https",
@@ -385,10 +377,6 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{app_url}}/api/check_autoupdate/?device={{device_name}}&version={{app_version}}",
 					"protocol": "https",
@@ -6990,7 +6978,7 @@
 					},
 					{
 						"key": "Cookie",
-						"value": "{{cookie}}",
+						"value": "csrftoken={{csrfmiddlewaretoken}}; app_version={{app_version}}; device_name={{device_name}}; ios_version={{ios_version}}",
 						"type": "text"
 					}
 				],
@@ -7214,7 +7202,7 @@
 					},
 					{
 						"key": "Cookie",
-						"value": "{{cookie}}",
+						"value": "csrftoken={{csrfmiddlewaretoken}}; app_version={{app_version}}; device_name={{device_name}}; ios_version={{ios_version}}",
 						"type": "text"
 					}
 				],
@@ -7269,7 +7257,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "60601acf-1de9-4030-aa3b-5f486e0562a1",
+						"id": "56d34b6d-cdce-4019-afc6-00834524e2df",
 						"exec": [
 							"//Test 1",
 							"pm.test(\"Status code is 200\", function () {",
@@ -7567,7 +7555,6 @@
 							"             \"last_note_sort\",",
 							"             \"default_note_filter\",",
 							"             \"thesis_widgtes\",",
-							"             \"dashboard_calendar_size\",",
 							"             \"email\",",
 							"             \"last_sort_order\",",
 							"             \"default_sort_filter\",",
@@ -8068,7 +8055,7 @@
 							"             \"stock_movements\",",
 							"             \"timestamp\",",
 							"             \"press_release\",",
-							"             \"presentation\",",
+							"             ",
 							"             \"realtime_alerts\",",
 							"             \"filings_alert\",",
 							"             \"pre_post_news\",",
@@ -41444,11 +41431,7 @@
 							"                              \"type\": \"object\",",
 							"                              \"title\": \"The Values Schema\",",
 							"                              \"required\": [",
-							"                                \"5d230f1bc0af3159018c71da\",",
-							"                                \"5d230efbf8fe36095321507d\",",
-							"                                \"5d230f096eff3629511f8d2a\",",
-							"                                \"5d230f12f8fe360953215081\",",
-							"                                \"5d230f016eff3629511f8d27\"",
+							"                                ",
 							"                              ],",
 							"                              \"properties\": {",
 							"                                \"5d230f1bc0af3159018c71da\": {",
@@ -42142,16 +42125,16 @@
 							"                            \"temp_id\",",
 							"                            \"entity_type\",",
 							"                            \"children\",",
-							"                            \"version\",",
+							"                           ",
 							"                            \"username\",",
-							"                            \"keys\",",
+							"                           ",
 							"                            \"active\",",
 							"                            \"name\",",
 							"                            \"created_at\",",
-							"                            \"values\",",
+							"                           ",
 							"                            \"owner_type\",",
 							"                            \"comment_ids\",",
-							"                            \"order\"",
+							"                           ",
 							"                          ],",
 							"                          \"properties\": {",
 							"                            \"updated_at\": {",
@@ -42427,11 +42410,7 @@
 							"                              \"type\": \"object\",",
 							"                              \"title\": \"The Values Schema\",",
 							"                              \"required\": [",
-							"                                \"5d230f1bc0af3159018c71da\",",
-							"                                \"5d230efbf8fe36095321507d\",",
-							"                                \"5d230f096eff3629511f8d2a\",",
-							"                                \"5d230f12f8fe360953215081\",",
-							"                                \"5d230f016eff3629511f8d27\"",
+							"                                ",
 							"                              ],",
 							"                              \"properties\": {",
 							"                                \"5d230f1bc0af3159018c71da\": {",
@@ -44116,7 +44095,7 @@
 							"      \"properties\": {",
 							"        \"status\": {",
 							"          \"$id\": \"#/properties/result/properties/status\",",
-							"          \"type\": \"boolean\",",
+							"          \"type\": [\"boolean\",\"integer\"],",
 							"          \"title\": \"The Status Schema\",",
 							"          \"default\": false,",
 							"          \"examples\": [",
@@ -44201,12 +44180,12 @@
 						},
 						{
 							"key": "action",
-							"value": "email_thesis",
+							"value": "send_email",
 							"type": "text"
 						},
 						{
-							"key": "email_list",
-							"value": "[\"malika.jain@sentieo.com\"]",
+							"key": "emailto",
+							"value": "malika.jain@sentieo.com",
 							"type": "text"
 						}
 					]
