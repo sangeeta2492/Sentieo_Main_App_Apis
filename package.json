@@ -8,7 +8,7 @@
   "scripts": {
     "api_tests_production": "newman run tests/Sentieo_Main_App.postman_collection.json -e tests/Sentieo_Main_App.postman_environment.json -r cli,junit"
   },
-  "author": "Sangeeta Nandal",
+  "author": "Malika Jain",
   "dependencies": {
     "newman": "^4.4.1"
   }
