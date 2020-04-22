@@ -299,7 +299,7 @@
 							"console.log(reqBody);",
 							"",
 							"pm.test(\"Status code expected 200 for /api/login_1/   ||  \" + \"||Status code: \" + pm.response.code + \"|| Request parameters:  \" + reqBody , function () {",
-							"    pm.response.to.have.status(400);",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"",
 							"",
