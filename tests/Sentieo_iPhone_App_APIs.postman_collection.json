@@ -12369,8 +12369,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8582c478-697d-417d-af82-b3da06386885",
+						"id": "52d5b30d-812d-4412-a8f4-4caed516b217",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
+							"",
+							"",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"var ticker_array1 = postman.getEnvironmentVariable(\"ticker_array_env\");",
@@ -12660,10 +12663,6 @@
 							"",
 							"}",
 							"}",
-							"else",
-							"{",
-							"    postman.setNextRequest(\"fetch_graph_data- Price chart1\");",
-							"}",
 							""
 						],
 						"type": "text/javascript"
@@ -12672,7 +12671,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "74c9ffd7-26cb-4144-8ef1-68c3f9db5bbe",
+						"id": "32929b11-9460-44a1-b7f9-edd4d978ccf3",
 						"exec": [
 							"var ticker_array = [];",
 							"ticker_array = postman.getEnvironmentVariable(\"ticker_array_env\").split(',');",
@@ -28349,14 +28348,19 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7e778e5a-db44-478a-adc3-a105a957d79f",
+						"id": "33bf83c5-7804-45a0-97c7-18e499147728",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"var ticker_array1 = postman.getEnvironmentVariable(\"ticker_array_env\");",
 							" ",
 							" var ticker_array_count = ticker_array1.length;",
 							" var current_ticker = postman.getEnvironmentVariable(\"ticker\");",
+							" ",
+							" var current_ticker_count = postman.getEnvironmentVariable(\"current_ticker_count\");",
+							" var total_ticker_count = postman.getEnvironmentVariable(\"total_ticker_count\");",
+							" ",
 							"",
 							" if(ticker_array_count > 0 )",
 							" {",
@@ -28374,9 +28378,15 @@
 							"pm.test(\"Status code expected 200 for /api/fetch_all_xbrl_tables/ *** Ticker: \"+ current_ticker.toUpperCase() + \" ***||Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
 							" pm.response.to.have.status(200);",
 							"});",
+							"",
+							"if (responseCode.code === 200)",
+							"{",
+							"if(current_ticker_count == total_ticker_count)",
+							"{",
 							"pm.test(\"Response time expected 5000ms for /api/fetch_all_xbrl_tables/ *** Ticker: \"+ current_ticker.toUpperCase() + \"***||Now Getting \" +pm.response.responseTime + \"ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});",
+							"}",
 							"",
 							"pm.test(\"Content-Type is not present for /api/fetch_all_xbrl_tables/ *** Ticker: \"+ current_ticker.toUpperCase(), function () {",
 							"    pm.response.to.have.header(\"Content-Type\");",
@@ -28682,6 +28692,8 @@
 							"});",
 							"",
 							"}",
+							"}",
+							"",
 							""
 						],
 						"type": "text/javascript"
@@ -28690,7 +28702,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "62c4e66b-39ea-499f-9a76-407404409559",
+						"id": "909c98fd-a32f-4d9d-97bf-445319a16f3a",
 						"exec": [
 							"var ticker_array = [];",
 							"ticker_array = postman.getEnvironmentVariable(\"ticker_array_env\").split(',');",
@@ -28758,34 +28770,11 @@
 			"name": "xbrl_table_with_change",
 			"event": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"id": "a59fc272-0662-485d-a4c0-a91695c1962f",
-						"exec": [
-							"var stmnt_array = [];",
-							"stmnt_array = postman.getEnvironmentVariable(\"statement_array_env\").split(',');",
-							"",
-							"console.log(stmnt_array);",
-							"",
-							"//postman.setEnvironmentVariable(\"ticker_count_env\", ticker_array.length);",
-							"postman.setEnvironmentVariable(\"current_ticker_count\", ticker_array.length);",
-							"",
-							"postman.setEnvironmentVariable(\"current_stmnt_type\", stmnt_array[0]);",
-							"stmnt_array.shift();",
-							"",
-							"postman.setEnvironmentVariable(\"statement_array_env\", stmnt_array);",
-							"",
-							"console.log(stmnt_array[0]);",
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
 					"listen": "test",
 					"script": {
-						"id": "462668d1-aeae-4155-8306-7e3ca587abbc",
+						"id": "2dbd4e98-b0a5-4adf-bef9-e1f6a8ec26cc",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"",
@@ -28830,6 +28819,9 @@
 							"pm.test(\"Status code expected 200 for /api/xbrl_table_with_change/ *** Ticker:\"+ current_ticker.toUpperCase()+\" *** Statement type: \"+ current_stmnt  + \" ***||Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
 							" pm.response.to.have.status(200);",
 							"});",
+							"",
+							"if (responseCode.code === 200)",
+							"{",
 							"",
 							"if(current_ticker_count == total_ticker_count)",
 							"{",
@@ -29002,6 +28994,31 @@
 							"pm.test('Schema is not valid for /api/xbrl_table_with_change/ *** Ticker: '+ current_ticker.toUpperCase() +\" *** Statement type: \"+ current_stmnt + \" ***|| Request parameters:  || \" + reqBody, function() {",
 							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
 							"});",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2141366e-5194-4926-ada1-44768d83d3e9",
+						"exec": [
+							"var stmnt_array = [];",
+							"stmnt_array = postman.getEnvironmentVariable(\"statement_array_env\").split(',');",
+							"",
+							"console.log(stmnt_array);",
+							"",
+							"//postman.setEnvironmentVariable(\"ticker_count_env\", ticker_array.length);",
+							"",
+							"",
+							"postman.setEnvironmentVariable(\"current_stmnt_type\", stmnt_array[0]);",
+							"stmnt_array.shift();",
+							"",
+							"postman.setEnvironmentVariable(\"statement_array_env\", stmnt_array);",
+							"",
+							"console.log(stmnt_array[0]);",
 							""
 						],
 						"type": "text/javascript"
