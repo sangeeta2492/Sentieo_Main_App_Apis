@@ -2202,8 +2202,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "469ce9f3-1068-46dd-80a4-8c0def0d611e",
+						"id": "32052db5-6357-46de-80bb-58cbaee733cc",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
+							"",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"",
@@ -2211,8 +2213,7 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"var xyz = 400;",
-							"if (xyz === 200){",
+							"if (responseCode.code === 200){",
 							"    ",
 							"pm.test(\"Response time expected 5000ms for /api/fetch_search_with_in_cmnds/ || Now getting \" +pm.response.responseTime + \"ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
@@ -2457,7 +2458,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "adfd45ed-a688-4e72-b8fd-4b4be18d1077",
+						"id": "8053a6b6-51d2-4d8a-bd64-c47a563fbd16",
 						"exec": [
 							"var today = new Date();",
 							"var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();",
@@ -40468,7 +40469,7 @@
 					"script": {
 						"id": "d523a722-7e74-4067-b4e9-bcf00de84a38",
 						"exec": [
-							"console.log(\"Response body:  \" + responseBody);",
+							"",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"",
