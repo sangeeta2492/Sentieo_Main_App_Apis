@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "api_tests_production": "newman run tests/Sentieo_iPhone_App_APIs.postman_collection.json -e tests/Sentieo_Main_App.postman_environment.json -r htmlextra "
+    "api_tests_production": "newman run tests/Test1.postman_collection.json -e tests/Testing.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export :node_modules/newman/testReport.html"
   },
   "author": "Malika Jain",
   "dependencies": {
