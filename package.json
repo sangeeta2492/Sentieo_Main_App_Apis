@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "api_tests_production": "newman run tests/Test1.postman_collection.json -e tests/Testing.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export node_modules/newman/testReport.html"
+    "api_tests_production": "newman run tests/Test1.postman_collection.json -e tests/Testing.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export node_modules/newman/testReport.html"
   },
   "author": "Malika Jain",
   "dependencies": {
