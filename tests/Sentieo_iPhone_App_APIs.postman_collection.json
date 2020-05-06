@@ -284,8 +284,7 @@
 							"value": "{{app_version}}"
 						}
 					]
-				},
-				"description": "https://app.sentieo.com/api/check_autoupdate/?device=iphone&version=6.4"
+				}
 			},
 			"response": []
 		},
@@ -313,7 +312,7 @@
 							"console.log(reqBody);",
 							"",
 							"pm.test(\"Status code expected 200 for /api/login_1/   ||  \" + \"||Status code: \" + pm.response.code + \"|| Request parameters:  \" + reqBody , function () {",
-							"    pm.response.to.have.status(500);",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"",
 							"if (responseCode.code === 200){",
