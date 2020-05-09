@@ -1368,8 +1368,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "1c310750-1848-408b-af12-ebe5ed9cc01c",
+						"id": "df8dd13f-634a-4020-a23b-d6ec09e2a1d8",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
+							"",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"",
@@ -1393,9 +1395,9 @@
 							"    ",
 							"    try {",
 							"        var jsonData = JSON.parse(responseBody);",
-							"      pm.environment.set(\"doc_id\", jsonData.result[0].id);",
-							"      pm.environment.set(\"doc_type\", jsonData.result[0].doc_subtype);",
-							"      pm.environment.set(\"Time_stamp\",jsonData.result[0].timestamp);",
+							"    //   pm.environment.set(\"doc_id\", jsonData.result[0].id);",
+							"    //   pm.environment.set(\"doc_type\", jsonData.result[0].doc_subtype);",
+							"    //   pm.environment.set(\"Time_stamp\",jsonData.result[0].timestamp);",
 							"",
 							"    }",
 							"    catch(e){",
@@ -1680,7 +1682,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "43310396-acf9-4b58-9f6c-d43ce9b47518",
+						"id": "c3f479bc-fa23-4f54-9308-7a6c1139e859",
 						"exec": [
 							"var moment = require(\"moment\");",
 							"postman.setEnvironmentVariable(\"Doc_search_date_to\", moment().format(\"DD/MMM/YYYY\"));",
@@ -2227,6 +2229,7 @@
 							"    ",
 							"    try {",
 							"        var jsonData = JSON.parse(responseBody);",
+							"        jsonData.result.docs[0].id = 'xyz';",
 							"    pm.environment.set(\"doc_id\", jsonData.result.docs[0].id);",
 							"    pm.environment.set(\"docsearch_doc_title\", jsonData.result.docs[0].title);",
 							"    pm.environment.set(\"docsearch_doc_ticker\", jsonData.result.docs[0].ticker);",
@@ -2246,6 +2249,7 @@
 							"  console.log(doc_type);",
 							"  if(doc_type === true)",
 							"  {",
+							"      jsonData.result.docs[doc_counter].id = 'abc';",
 							"      var pdf_doc_id = jsonData.result.docs[doc_counter].id;",
 							"      console.log('doc id of pdf doc is:'+ pdf_doc_id);",
 							"      pm.environment.set(\"pdf_doc_id\", pdf_doc_id);",
@@ -9402,8 +9406,9 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e35dc0a6-c58f-4ea7-9a64-82e20ac108aa",
+						"id": "0cb58575-4fe6-4afd-bc25-0700f6687b2f",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"pm.test(\"Status code expected 200 for /api/fetch_transform_doc_content/\" + \"||Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
