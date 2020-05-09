@@ -1794,39 +1794,26 @@
 			"name": "Fetch_search_with_filters",
 			"event": [
 				{
-					"listen": "prerequest",
-					"script": {
-						"id": "ebc4fd52-facf-40ab-adf0-89facd28261a",
-						"exec": [
-							"var today = new Date();",
-							"var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();",
-							"",
-							"pm.environment.set(\"Doc_search_date_to\", date);",
-							"",
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
 					"listen": "test",
 					"script": {
-						"id": "135c81f4-23d8-47e1-ae7a-1f271f4d3bff",
+						"id": "91868757-b876-4f40-bcc7-2a5b9216a6c9",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
+							"",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"",
-							"pm.test(\"Status code expected 200 for /api/fetch_search_with_filters/ ||\" + \"Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
+							"pm.test(\"Status code expected 200 for /api/fetch_search/ ||\" + \"Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"if (responseCode.code === 200){",
 							"    ",
-							"pm.test(\"Response time expected 5000ms for /api/fetch_search_with_filters/ || Now getting \" +pm.response.responseTime + \"ms\", function () {",
+							"pm.test(\"Response time expected 5000ms for /api/fetch_search/ || Now getting \" +pm.response.responseTime + \"ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});",
 							"",
 							"",
-							"pm.test(\"Content-Type is not present for /api/fetch_search_with_filters/\", function () {",
+							"pm.test(\"Content-Type is not present for /api/fetch_search/\", function () {",
 							"    pm.response.to.have.header(\"Content-Type\");",
 							"    pm.response.to.be.header(\"Content-Type\",\"application/json\");",
 							"    });",
@@ -2047,7 +2034,7 @@
 							"    ",
 							"};",
 							"",
-							"pm.test('Schema is not valid for /api/fetch_search_with_filters/ ' + \" Request parameters:  || \" + reqBody, function() {",
+							"pm.test('Schema is not valid for /api/fetch_search/ ' + \" Request parameters:  || \" + reqBody, function() {",
 							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
 							"});",
 							"",
@@ -2058,6 +2045,21 @@
 							"{",
 							"    postman.setNextRequest(\"Fetch_search_with_in_cmnds\");",
 							"}"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f0218723-1a5f-45f4-a812-00c9d287efcc",
+						"exec": [
+							"var today = new Date();",
+							"var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();",
+							"",
+							"pm.environment.set(\"Doc_search_date_to\", date);",
+							"",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -2210,18 +2212,18 @@
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"",
-							"pm.test(\"Status code expected 200 for /api/fetch_search_with_in_cmnds/ ||\" + \"Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
+							"pm.test(\"Status code expected 200 for /api/fetch_search/ ||\" + \"Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
 							"if (responseCode.code === 200){",
 							"    ",
-							"pm.test(\"Response time expected 5000ms for /api/fetch_search_with_in_cmnds/ || Now getting \" +pm.response.responseTime + \"ms\", function () {",
+							"pm.test(\"Response time expected 5000ms for /api/fetch_search/ || Now getting \" +pm.response.responseTime + \"ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});",
 							"",
 							"",
-							"pm.test(\"Content-Type is not present for /api/fetch_search_with_in_cmnds/\", function () {",
+							"pm.test(\"Content-Type is not present for /api/fetch_search/\", function () {",
 							"    pm.response.to.have.header(\"Content-Type\");",
 							"    pm.response.to.be.header(\"Content-Type\",\"application/json\");",
 							"    });",
@@ -2444,7 +2446,7 @@
 							"    ",
 							"};",
 							"",
-							"pm.test('Schema is not valid for /api/fetch_search_with_in_cmnds/ ' + \" Request parameters:  || \" + reqBody, function() {",
+							"pm.test('Schema is not valid for /api/fetch_search/ ' + \" Request parameters:  || \" + reqBody, function() {",
 							"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
 							"});",
 							"",
@@ -9482,7 +9484,7 @@
 						},
 						{
 							"key": "username",
-							"value": "sangeeta.nandal",
+							"value": "test.mobile02",
 							"type": "text"
 						},
 						{
@@ -9614,24 +9616,23 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "dddf425a-2372-48ad-b013-a5eb45c881dc",
+						"id": "78500ae5-e758-4109-a0b1-9cf1bd9be5d2",
 						"exec": [
+							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
 							"",
-							"pm.test(\"Status code is 200 for /api/delete_watchlist/\"  + \"||Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
+							"pm.test(\"Status code expected 200 for /api/get_doc_pdf/\"  + \"||Status code: \" + pm.response.code + \"|| Request parameters:  || \" + reqBody, function () {",
 							" pm.response.to.have.status(200);",
 							"});",
 							"",
 							"if (responseCode.code === 200)",
 							"{",
-							"pm.test(\"Response time expected 5000ms for /api/delete_watchlist/ ||Now getting \" +pm.response.responseTime + \"ms\", function () {",
+							"pm.test(\"Response time expected 5000ms for /api/get_doc_pdf/ ||Now getting \" +pm.response.responseTime + \"ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});",
-							"pm.test(\"Successful POST request for /api/delete_watchlist/\", function () {",
-							"    pm.expect(pm.response.code).to.be.oneOf([200,201,202]);",
-							"});",
-							"pm.test(\"Content-Type is not present for /api/delete_watchlist/\", function () {",
+							"",
+							"pm.test(\"Content-Type is not present for /api/get_doc_pdf/\", function () {",
 							"    pm.response.to.have.header(\"Content-Type\");",
 							"    pm.response.to.be.header(\"Content-Type\",\"application/pdf\");",
 							"    });",
