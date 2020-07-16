@@ -2205,7 +2205,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "10c9555e-e23e-482e-8b39-76b8ff7015c1",
+						"id": "7cdd8722-c210-412e-bfca-aa6225919b46",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"",
@@ -2463,7 +2463,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "72e59614-191e-45fa-8bf8-ff0822487fee",
+						"id": "3ef73a4b-74de-4548-ad14-f26bc282e105",
 						"exec": [
 							"var today = new Date();",
 							"var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();",
@@ -2528,7 +2528,7 @@
 						},
 						{
 							"key": "tickers",
-							"value": "amzn",
+							"value": "20544",
 							"type": "text"
 						},
 						{
@@ -2634,7 +2634,8 @@
 						{
 							"key": "filing_type",
 							"value": "ppt#$",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "rr_ctbids",
@@ -2644,6 +2645,11 @@
 						{
 							"key": "multi_field_bit",
 							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "filters",
+							"value": "{\"sector\":{},\"language\":{},\"section\":{},\"doctype\":{\"ppt\":{\"company-presentations\":{\"param\":\"ppt_category\",\"values\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"8\"]}}},\"regions\":{},\"ticker\":{}}",
 							"type": "text"
 						}
 					]
