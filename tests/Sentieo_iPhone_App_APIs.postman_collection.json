@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e108ff2a-6631-44b5-9a4a-b125c91850fc",
+		"_postman_id": "3b0795aa-2855-4950-bca2-d59384d8596f",
 		"name": "Sentieo_iPhone_App_APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6bcfe447-060c-45c5-b732-15cd4c9c5070",
+						"id": "0df3b9bf-44dd-4ce1-abe4-228bda4990c7",
 						"exec": [
 							"var x = postman.getResponseCookie(\"csrftoken\").value;",
 							"pm.environment.set(\"csrfmiddlewaretoken\", x);",
@@ -46,7 +46,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ac632cc4-ea2a-4b70-a6b5-f6cb15b6be8c",
+						"id": "035daeb9-8285-4df1-89c6-b113eabc1038",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"",
@@ -93,17 +93,7 @@
 							"      \"type\": \"object\",",
 							"      \"title\": \"The Result Schema\",",
 							"      \"required\": [",
-							"        \"minTimeDiffBetweenTwoTrigger\",",
-							"        \"action_title\",",
-							"        \"triggernotebook\",",
-							"        \"action_url\",",
-							"        \"notebook_button\",",
-							"        \"message\",",
-							"        \"sendanalytics\",",
-							"        \"cancel_title\",",
-							"        \"upgrade\",",
-							"        \"title\",",
-							"        \"forceupgrade\"",
+							"        ",
 							"      ],",
 							"      \"properties\": {",
 							"        \"minTimeDiffBetweenTwoTrigger\": {",
@@ -294,7 +284,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5d7b6077-0c95-4173-a46c-28e4446927b5",
+						"id": "09526559-12bf-4861-a0ca-216549bf40ed",
 						"exec": [
 							"//var email = pm.enviornment.get(\"email\");"
 						],
@@ -304,7 +294,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4708af33-c216-4b2c-8e14-78e1f34d116c",
+						"id": "59bb38c2-13fc-426e-8539-0deeb1836635",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"",
@@ -1211,7 +1201,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f6dd7959-44a2-49c8-aea6-451f55e99cb4",
+						"id": "9bcce563-29f5-4c94-98f6-8bdebef77de7",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -1374,7 +1364,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7a7b0533-1e42-42fb-9574-2554fcbbe09c",
+						"id": "dfc4f042-22c2-4417-81e5-893e4ae52ff7",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"",
@@ -1688,7 +1678,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "172090f0-d192-4224-a453-dfbbea8e1faa",
+						"id": "84997ff0-a84c-4c1e-9f11-b51e28f43b19",
 						"exec": [
 							"var moment = require(\"moment\");",
 							"postman.setEnvironmentVariable(\"Doc_search_date_to\", moment().format(\"DD/MMM/YYYY\"));",
@@ -1805,7 +1795,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "79c831a3-8ebf-45f5-aeed-b4864154a9c8",
+						"id": "6b96ee7a-1488-4138-9539-551a371e0a13",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"",
@@ -2061,7 +2051,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "477a1432-6417-4014-9782-03f5acf5b273",
+						"id": "cfe64580-d24e-4907-8c12-53ded194b010",
 						"exec": [
 							"var today = new Date();",
 							"var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();",
@@ -2216,7 +2206,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7cdd8722-c210-412e-bfca-aa6225919b46",
+						"id": "b92b6af8-b93a-4edf-ab6b-b0bd92884853",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"",
@@ -2520,7 +2510,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3ef73a4b-74de-4548-ad14-f26bc282e105",
+						"id": "964c5f93-0d66-4605-a74e-6c85ff3fbc24",
 						"exec": [
 							"var today = new Date();",
 							"var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();",
@@ -2746,7 +2736,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9a0b4e5c-579a-41c1-8591-f714cb331d31",
+						"id": "3e35ddff-aa7a-418c-9ed6-27441c7af650",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -3217,7 +3207,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5fd06c7a-bb5b-44c3-b0a5-13e1c568f3ab",
+						"id": "259306d3-13a6-4ce8-88f7-d06a56a74e4b",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -3400,7 +3390,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "374c8c2d-722f-47d1-8b5d-11da69031f5f",
+						"id": "9a1ba0d0-c83a-41a1-959a-ff548d48de14",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -3651,7 +3641,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "54b3fabc-850b-4944-b4c8-f5894664db22",
+						"id": "812cfffc-7f43-4d02-b17b-85ac0022106b",
 						"exec": [
 							"var doc_id = postman.getEnvironmentVariable(\"doc_id\");",
 							"if(doc_id == \"\")",
@@ -3721,7 +3711,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "785fa8c1-395b-45c5-a7e6-fbba40bfdd0b",
+						"id": "38e532ad-31e2-45d7-b2fc-a1295e642e35",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -6886,7 +6876,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "167f7027-a7f0-4806-af80-82455c8c396e",
+						"id": "58bb9bac-c6d8-40b0-859a-84f395592952",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -7171,7 +7161,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c463c1c4-22af-4455-8b7a-a8b2ca82853a",
+						"id": "88c6b4ed-1ca4-4a0a-83c1-8f8c5f06391f",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -8767,7 +8757,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "698670a4-e44a-480f-8424-74d085498649",
+						"id": "abfc9617-459a-404e-950b-0449ab3a98f3",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
@@ -9259,7 +9249,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9ac0ef27-57ce-4de9-bc6f-2cc8d4590c20",
+						"id": "febe50e1-b826-48f0-8d5b-ced0ebb39aba",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
@@ -9522,7 +9512,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e077cafa-d797-4163-8eb3-5f86d3f5c9e7",
+						"id": "ab7bf488-dc0f-47bc-b379-8537a6a5d797",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
@@ -9651,7 +9641,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b193da47-25cf-45dc-9c4a-a500526a766d",
+						"id": "09a13880-b3f5-47fa-8eac-846929afe634",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -9686,7 +9676,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3307f064-a6ca-4462-8285-33d0a1505aa5",
+						"id": "26df0ff9-369c-4372-87ca-ad77cc2b469e",
 						"exec": [
 							"var pdf_doc_id = postman.getEnvironmentVariable(\"pdf_doc_id\");",
 							"if(pdf_doc_id == \"\")",
@@ -9751,7 +9741,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b6a15d7a-3881-46d3-bca4-8f874ef17b93",
+						"id": "80a48521-adfc-4734-a209-1c162f0cf4ce",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
@@ -9788,7 +9778,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "027e4836-67bd-4327-86f1-f58c3421bf1b",
+						"id": "b92ea803-21ef-41b0-8381-2d4558742a7c",
 						"exec": [
 							"var pdf_doc_id = postman.getEnvironmentVariable(\"pdf_doc_id\");",
 							"if(pdf_doc_id == \"\")",
@@ -9853,7 +9843,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ae85c962-4af6-4aae-b83c-dfc277e5cde8",
+						"id": "96766701-fb8f-45fb-824c-91553355d2c7",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -10597,7 +10587,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "21d8021e-6c09-4414-abab-b1faf03bdb9e",
+						"id": "f3da5fb8-7a30-4ae0-af94-9b6b49d254cb",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -10812,7 +10802,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "dc58d23d-e974-4fb0-b13e-5fd1dd0fd8d0",
+						"id": "d411e4ef-dc87-451f-8342-578bcd278c7c",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -11085,7 +11075,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "1a976a4c-ec13-48a7-88a8-94490816f76f",
+						"id": "4b639c7e-d8db-46fe-b451-c934a2e3ffe7",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -11914,7 +11904,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7269fa4d-39fa-424c-84c1-ef9e9a0a52d9",
+						"id": "96abd46c-3e80-42dd-8997-399ef8bbc0e9",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -12117,7 +12107,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5a0230d1-906a-474e-af3e-ebd0af71881c",
+						"id": "941471b1-9a73-49b5-be14-928bc60df4ca",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -13714,7 +13704,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d69eaaab-0696-421a-973e-c09d31ded7b9",
+						"id": "98f55b2d-be7f-4e95-8756-d3cbf441d513",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
@@ -13890,7 +13880,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7f518c13-39bb-462b-9f43-7ee51f4463c6",
+						"id": "9476bbb8-e4ec-46e8-bb62-630e525b4ed0",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -14091,7 +14081,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "33af9f92-326f-413c-9f3c-40d2b004bb99",
+						"id": "90f82a64-5d51-4d6b-8540-fe7e451db481",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -14253,7 +14243,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8d2c8efe-7c64-4214-8d9a-160022f0f290",
+						"id": "f44d9bd3-8402-4f36-b432-85883123457d",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -14431,7 +14421,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f0358d7d-e047-4129-b0f7-c6480042a106",
+						"id": "d075c4ac-e122-495a-919c-a4f44f64aa11",
 						"exec": [
 							"console.log(\"Response body:  \" + responseBody);",
 							"var reqBody = JSON.stringify(request.data);",
@@ -14776,7 +14766,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e4be1d94-0116-40dd-a0a4-003a1b6f0c9c",
+						"id": "45ed170b-0694-47b7-aba6-b1cb015f5b94",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -15115,7 +15105,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "bfa18ab7-ad75-4640-b61a-9b99289faa3f",
+						"id": "d833071b-3202-4401-a48a-648b132fcf6c",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -15452,7 +15442,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "367f4899-3246-453a-a456-e70b56358a4b",
+						"id": "8680a7a0-aa6d-4134-9869-a2f0ed80354c",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -15783,7 +15773,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "de365e97-68f6-4456-b2e7-c10e229c678a",
+						"id": "8439ca46-d5c6-432b-932a-45604e804e54",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -23991,7 +23981,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2598f145-37de-4a50-89f8-f9af8ff19836",
+						"id": "9eeb0254-396c-4924-b00f-779e112c1d48",
 						"exec": [
 							"var reqBody = JSON.stringify(request.data);",
 							"console.log(reqBody);",
@@ -25280,7 +25270,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "689297f9-da79-4338-ac69-25fd46a2779b",
+						"id": "dd8e1bc6-583b-45f4-9c60-962989eae3a3",
 						"exec": [
 							"",
 							"var reqBody = JSON.stringify(request.data);",
